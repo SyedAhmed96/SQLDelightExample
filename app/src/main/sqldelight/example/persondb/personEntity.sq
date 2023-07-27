@@ -1,0 +1,27 @@
+CREATE TABLE personEntity(
+    id INTEGER NOT NULL PRIMARY KEY,
+    firstname TEXT NOT NULL,
+    lastname TEXT NOT NULL
+);
+
+
+getPersonById:
+SELECT * FROM
+personEntity
+WHERE id = :id;
+
+
+getAllPersons:
+SELECT * FROM
+personEntity;
+
+
+insertPerson:
+INSERT OR REPLACE
+INTO personEntity
+VALUES (?,?,?);
+
+
+deletePerson:
+DELETE FROM personEntity
+WHERE id =: id;
